@@ -25,7 +25,12 @@ export default class Glyph {
      * that represent multiple visual characters.
      * @type {number[]}
      */
+    if (codePoints.length == 0) {
+      this.codePoints = font._cmapProcessor.codePointsForGlyph(id);
+    } else {
     this.codePoints = codePoints;
+    }
+
     this._font = font;
 
     // TODO: get this info from GDEF if available
